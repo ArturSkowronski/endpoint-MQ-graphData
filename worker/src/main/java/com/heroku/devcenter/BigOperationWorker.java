@@ -11,8 +11,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.util.ErrorHandler;
 
-import static java.lang.System.getenv;
-
 /**
  * Worker for receiving and processing BigOperations asynchronously.
  */
@@ -36,7 +34,7 @@ public class BigOperationWorker {
                 final BigOperation bigOp = (BigOperation) messageConverter.fromMessage(message);
 
                 // simply printing out the operation, but expensive computation could happen here
-                System.out.println("Received from RabbitMQ "+getenv("CLOUDAMQP_URL")+": " + bigOp);
+                System.out.println("Received from RabbitMQ : " + bigOp);
             }
         });
 
