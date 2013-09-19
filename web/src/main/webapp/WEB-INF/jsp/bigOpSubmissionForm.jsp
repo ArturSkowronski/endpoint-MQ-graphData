@@ -1,11 +1,37 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<jsp:include page="header.jsp"/>
-<div class="row">
-    <div class="span8 offset2">
-        <div class="page-header">
-            <h1>Symulacja trwa...</h1>
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Symulacja uruchomiona</title>
+
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.0.0/cosmo/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+    <link href="/resources/css/heroku.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header"></div>
+            <a class="navbar-brand">SYMULACJA DATASTORE<i class="icon-lightbulb pull-left icon-large"></i></a>
         </div>
     </div>
-</div>
-<jsp:include page="footer.jsp"/>
+
+    <div class="container">
+        <div class="row">
+            <div class="span8 offset2">
+                <div class="page-header">
+                    <h1>Symulacja trwa...</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>Wykonane przez: Artur Skowronski & Pawel Nester</div>
+    <script src="/resources/js/jquery-1.7.1.min.js"></script>
+</body>
+</html>
