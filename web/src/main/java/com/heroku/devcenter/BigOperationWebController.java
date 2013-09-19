@@ -31,6 +31,6 @@ public class BigOperationWebController {
     public String process(@ModelAttribute("symuluj") DataSimulation bigOp, Map<String,Object> map) {
         amqpTemplate.convertAndSend(rabbitQueue.getName(), bigOp);
         System.out.println("Sent to RabbitMQ from app: " + bigOp);
-        return "bigOpReceivedConfirmation";
+        return "''";
     }
 }
