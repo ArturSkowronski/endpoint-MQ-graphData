@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.util.Map;
+
 @Controller
 @RequestMapping("/symuluj")
 public class BigOperationWebController {
@@ -27,9 +29,9 @@ public class BigOperationWebController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public String process() {
-        amqpTemplate.convertAndSend(rabbitQueue.getName(), new DataSimulation("data"));
-        System.out.println("Sent to RabbitMQ from app: " + new DataSimulation("data"));
+    public String process(@ModelAttribute("symuluj") DataSimulation bigOp, Map<String,Object> map) {
+        amqpTemplate.convertAndSend(rabbitQueue.getName(), bigOp);
+        System.out.println("Sent to RabbitMQ from app: " + bigOp);
         return "bigOpReceivedConfirmation";
     }
 }
