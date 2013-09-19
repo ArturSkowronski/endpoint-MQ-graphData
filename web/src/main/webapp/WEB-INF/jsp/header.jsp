@@ -19,12 +19,10 @@
 </head>
 
 <body>
-<div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
-            <a href="/" class="brand">Symulator DATASTORE</a>
-            <a href="/" class="brand" id="heroku">by <strong>heroku</strong></a>
-        </div>
+<div class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header"></div>
+        <a class="navbar-brand">SYMULACJA DATASTORE<i class="icon-lightbulb pull-left icon-large white"</a>
     </div>
 </div>
 

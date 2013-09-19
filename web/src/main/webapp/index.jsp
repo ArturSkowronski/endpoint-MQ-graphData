@@ -67,13 +67,11 @@
 </head>
 
 <body>
-<div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
+<div class="navbar navbar-inverse">
         <div class="container">
-            <a href="/" class="brand">Symulacja logowania danych z sieci</a>
-            <a href="/" class="brand" id="heroku">by <strong>heroku</strong></a>
+            <div class="navbar-header"></div>
+            <a class="navbar-brand">SERWER DATASTORE<i class="icon-lightbulb pull-left icon-large white"</a>
         </div>
-    </div>
 </div>
 
 <div class="container" id="getting-started">
@@ -85,13 +83,13 @@
             </div>
 
             <div style="margin-bottom: 20px">
-
+                  <ul>
+                      <li>RabbitMQ</li>
+                      <li>SpringMVC</li>
+                      <li>Hadoop</li>
+                  </ul>
             </div>
 
-            <ul id="tab" class="nav nav-tabs">
-                <li class="active"><a href="#eclipse-instructions" data-toggle="tab">Use Eclipse 3.7</a></li>
-                <li><a href="#cli-instructions" data-toggle="tab">Use Command Line</a></li>
-            </ul>
 
             <a href="/spring/bigOp" class="btn btn-primary btn-large">Uruchom symulacje</a>
         </div>
