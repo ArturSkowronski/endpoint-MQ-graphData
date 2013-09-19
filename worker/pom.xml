@@ -13,12 +13,28 @@
 
     <dependencies>
         <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+        <dependency>
             <artifactId>common</artifactId>
             <groupId>com.heroku.devcenter.webworker</groupId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>
-
+    <repositories>
+        <repository>
+            <id>treasure-data.com</id>
+            <name>Treasure Data's Maven2 Repository</name>
+            <url>http://maven.treasure-data.com/</url>
+        </repository>
+        <repository>
+            <id>fluentd.org</id>
+            <name>Fluentd's Maven2 Repository</name>
+            <url>http://fluentd.org/maven2</url>
+        </repository>
+    </repositories>
     <build>
         <plugins>
             <plugin>
