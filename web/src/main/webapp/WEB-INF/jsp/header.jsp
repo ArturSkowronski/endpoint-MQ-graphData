@@ -22,7 +22,7 @@
 <div class="navbar navbar-inverse">
     <div class="container">
         <div class="navbar-header"></div>
-        <a class="navbar-brand">SYMULACJA DATASTORE<i class="icon-lightbulb pull-left icon-large white"</a>
+        <a class="navbar-brand">SYMULACJA DATASTORE<i class="icon-lightbulb pull-left icon-large"></i></a>
     </div>
 </div>
 
