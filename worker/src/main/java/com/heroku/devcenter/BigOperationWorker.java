@@ -53,13 +53,14 @@ public class BigOperationWorker {
                 final DataSimulation bigOp = (DataSimulation) messageConverter.fromMessage(message);
 
 
-                System.out.println("Received from RabbitMQ : " + bigOp);
                 Jedis jedis = finalPool.getResource();
                 try {
                     jedis.set("foo", "bar");
                     String foobar = jedis.get("foo");
                     jedis.zadd("sose", 0, "car"); jedis.zadd("sose", 0, "bike");
                     Set<String> sose = jedis.zrange("sose", 0, -1);
+                    System.out.println("Received from RabbitMQ : " + bigOp);
+
                 } finally {
                     finalPool.returnResource(jedis);
                 }
