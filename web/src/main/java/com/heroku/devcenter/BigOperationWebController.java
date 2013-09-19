@@ -14,7 +14,6 @@ import java.util.Map;
 @RequestMapping("/symuluj")
 public class BigOperationWebController {
 
-    // load RabbitMQ configuration provided by Spring
     @Autowired private AmqpTemplate amqpTemplate;
     @Autowired private Queue rabbitQueue;
 
