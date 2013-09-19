@@ -33,6 +33,7 @@
                   </ul>
             </div>
             <a href="/spring/bigOp" class="btn btn-primary btn-large">Uruchom symulacje</a>
+            <div>Wykonane przez: Artur Skowronski & Pawel Nester</div>
         </div>
     </div>
 </div>

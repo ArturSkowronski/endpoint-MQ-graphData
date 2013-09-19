@@ -10,8 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.0.0/cosmo/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
-    <link href="/resources/css/heroku.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -31,8 +29,9 @@
                 </div>
             </div>
         </div>
+        <div>Wykonane przez: Artur Skowronski & Pawel Nester</div>
     </div>
-    <div>Wykonane przez: Artur Skowronski & Pawel Nester</div>
+
     <script src="/resources/js/jquery-1.7.1.min.js"></script>
 </body>
 </html>
