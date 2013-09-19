@@ -21,7 +21,6 @@ public class BigOperationWebController {
     public DataSimulation newBigOp() {
         return new DataSimulation();
     }
-
     @RequestMapping()
     public String display() {
         Thread t = new Thread() {

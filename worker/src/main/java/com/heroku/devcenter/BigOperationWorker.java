@@ -38,6 +38,7 @@ public class BigOperationWorker {
         listenerContainer.setQueueNames(rabbitQueue.getName());
         try {
             URI redisURI = new URI(System.getenv("REDISTOGO_URL"));
+                               System.out.print(redisURI);
             pool = new JedisPool(new JedisPoolConfig(),
                     redisURI.getHost(),
                     redisURI.getPort(),

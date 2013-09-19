@@ -26,6 +26,7 @@
             <div class="span8 offset2">
                 <div class="page-header">
                     <h1>Symulacja trwa...</h1>
+                    ${bigOp.name};
                 </div>
             </div>
         </div>
