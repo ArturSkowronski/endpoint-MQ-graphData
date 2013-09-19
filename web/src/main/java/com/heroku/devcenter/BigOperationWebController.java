@@ -24,21 +24,27 @@ public class BigOperationWebController {
 
     @RequestMapping()
     public String display() {
+        Thread t = new Thread() {
+            public void run() {
+                boolean a=true;
+                while(a){
+                    amqpTemplate.convertAndSend(rabbitQueue.getName(), new DataSimulation());
+                    System.out.println("Sent to RabbitMQ from app: " + new DataSimulation());
+                    try {
+                        Thread.sleep(10000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                };
+            }
+        };
+        t.start();
         return "bigOpSubmissionForm";
     }
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.POST)
     public String process(@ModelAttribute("symuluj") DataSimulation bigOp, Map<String,Object> map) {
-        boolean a=true;
-        while(a){
-        amqpTemplate.convertAndSend(rabbitQueue.getName(), new DataSimulation());
-        System.out.println("Sent to RabbitMQ from app: " + new DataSimulation());
-            try {
-                Thread.sleep(10000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        };
+
         return "";
     }
 }
