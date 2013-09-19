@@ -53,6 +53,7 @@ public class RabbitConfiguration {
 
     private static String getEnvOrThrow(String name) {
         final String env = getenv(name);
+        System.out.print("Env:"+env);
         if (env == null) {
             throw new IllegalStateException("Environment variable [" + name + "] is not set.");
         }
