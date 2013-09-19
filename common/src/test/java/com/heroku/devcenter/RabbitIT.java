@@ -40,8 +40,8 @@ public class RabbitIT {
 
     @Test
     public void testSynchronous() throws Exception {
-        amqpTemplate.convertAndSend(rabbitQueue.getName(), new BigOperation("foo"));
-        Assert.assertEquals(((BigOperation) amqpTemplate.receiveAndConvert(rabbitQueue.getName())).getName(), "foo");
+        amqpTemplate.convertAndSend(rabbitQueue.getName(), new DataSimulation("foo"));
+        Assert.assertEquals(((DataSimulation) amqpTemplate.receiveAndConvert(rabbitQueue.getName())).getName(), "foo");
     }
 
     @Test
@@ -53,10 +53,10 @@ public class RabbitIT {
 
         final CountDownLatch fooLatch = new CountDownLatch(1);
         final CountDownLatch barLatch = new CountDownLatch(2);
-        final List<BigOperation> receievedMessageHolder = new ArrayList<BigOperation>(2);
+        final List<DataSimulation> receievedMessageHolder = new ArrayList<DataSimulation>(2);
         container.setMessageListener(new MessageListener() {
             public void onMessage(Message message) {
-                receievedMessageHolder.add((BigOperation) messageConverter.fromMessage(message));
+                receievedMessageHolder.add((DataSimulation) messageConverter.fromMessage(message));
                 fooLatch.countDown();
                 barLatch.countDown();
             }
@@ -70,11 +70,11 @@ public class RabbitIT {
         try {
             container.start();
 
-            amqpTemplate.convertAndSend(rabbitQueue.getName(), new BigOperation("foo"));
+            amqpTemplate.convertAndSend(rabbitQueue.getName(), new DataSimulation("foo"));
             assertTrue(fooLatch.await(5, TimeUnit.SECONDS));
             assertEquals(receievedMessageHolder.get(0).getName(), "foo");
 
-            amqpTemplate.convertAndSend(rabbitQueue.getName(), new BigOperation("bar"));
+            amqpTemplate.convertAndSend(rabbitQueue.getName(), new DataSimulation("bar"));
             assertTrue(barLatch.await(5, TimeUnit.SECONDS));
             assertEquals(receievedMessageHolder.get(1).getName(), "bar");
         } finally {

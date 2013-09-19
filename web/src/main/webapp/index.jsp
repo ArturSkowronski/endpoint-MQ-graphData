@@ -32,10 +32,12 @@
                       <li>Hadoop</li>
                   </ul>
             </div>
-            <a href="/spring/bigOp" class="btn btn-primary btn-large">Uruchom symulacje</a>
-            <div>Wykonane przez: Artur Skowronski & Pawel Nester</div>
+            <a href="/spring/symuluj" class="btn btn-primary btn-large">Uruchom symulacje</a>
         </div>
+
     </div>
+    <div class="row">Wykonane przez: Artur Skowronski & Pawel Nester</div>
+
 </div>
 <script src="/resources/js/jquery-1.7.1.min.js"></script>
 </body>
