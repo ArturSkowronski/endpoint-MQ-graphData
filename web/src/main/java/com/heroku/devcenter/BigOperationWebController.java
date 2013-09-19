@@ -34,7 +34,7 @@ public class BigOperationWebController {
         amqpTemplate.convertAndSend(rabbitQueue.getName(), new DataSimulation());
         System.out.println("Sent to RabbitMQ from app: " + new DataSimulation());
             try {
-                Thread.sleep(5000);
+                Thread.sleep(10000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
