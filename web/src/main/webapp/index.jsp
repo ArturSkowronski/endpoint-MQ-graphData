@@ -26,17 +26,27 @@
                 <h1>Symulacja logowania danych z sieci</h1>
             </div>
             <div style="margin-bottom: 20px">
-                  <ul>
-                      <li>RabbitMQ</li>
-                      <li>SpringMVC</li>
-                      <li>Hadoop</li>
-                  </ul>
+                RabbitMQ
+                <div class="alert alert-success">
+                Message Broker rozwijany przez VMWare. Implementacja standardu AMQP, pozwalająca na asynchroniczną obsługę połączeń webowych.
+                </div>
+                SpringMVC
+                <hr>
+                <div class="alert alert-success">
+                Framework MVC będący częścią frameworku Spring. Pozwala na użycie mapowiania requestów i dependency injection w serwisach WWW.
+                </div>
+                Redis
+                <hr>
+                <div class="alert alert-success">
+                    Redis to bardzo prosta baza w pamięci zainspirowana przez memcache. Do struktury klucz-> wartość nakłada dodatkowe struktury danych i operacje atomowe na nich. Pokażę jak mechanizmy transakcji i atomowość pomagają przekładać ciężar niektórych algorytmów do Redisa.
+                </div>
+                </ul>
             </div>
             <a href="/spring/symuluj" class="btn btn-primary btn-large">Uruchom symulacje</a>
         </div>
 
     </div>
-    <div class="row" style="margin-top:10px">Wykonane przez: Artur Skowronski & Paweł Nester</div>
+    <div class="row" style="margin-top:10px">Wykonane przez: Artur Skowronski & Pawel Nester</div>
 
 </div>
 <script src="/resources/js/jquery-1.7.1.min.js"></script>
