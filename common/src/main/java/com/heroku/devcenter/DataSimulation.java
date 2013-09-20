@@ -52,8 +52,8 @@ public class DataSimulation implements Serializable {
         return "DataSimulation{" +
                 "device='" + getDeviceEnum().getDeviceName() + '\'' +
                 "tarrif='" + getTariff() + '\'' +
-                "user='" + getUser().getId() + '\'' +
-                "weather"+ getWeatherEnum().getSun()+
+                "user='" + getUser().getId() + '\'' + '\''+
+                "weather"+ getWeatherEnum().getSun()+ '\''+
                 "time='" + getTime() + "'}";
     }
 
