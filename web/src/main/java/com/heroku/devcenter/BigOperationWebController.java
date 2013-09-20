@@ -29,7 +29,7 @@ public class BigOperationWebController {
                 boolean a=true;
                 while(a){
                     amqpTemplate.convertAndSend(rabbitQueue.getName(), new DataSimulation());
-                    System.out.println("Dane wysłane do RabbitMQ z systemu : " + new DataSimulation());
+                    System.out.println("Dane wyslane do RabbitMQ z systemu : " + new DataSimulation());
                     try {
                         Thread.sleep(3500);
                     } catch (InterruptedException e) {
