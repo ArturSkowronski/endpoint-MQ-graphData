@@ -17,7 +17,7 @@ import redis.clients.jedis.Protocol;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.Set;
+import java.util.HashMap;
 
 /**
  * Worker for receiving and processing BigOperations asynchronously.
@@ -52,13 +52,30 @@ public class BigOperationWorker {
         listenerContainer.setMessageListener(new MessageListener() {
             public void onMessage(Message message) {
                 final DataSimulation bigOp = (DataSimulation) messageConverter.fromMessage(message);
-
-
+                HashMap<String, String> map=new HashMap<String, String>();
+                map.put("device",""+bigOp.getDeviceEnum());
+                map.put("weather",""+bigOp.getWeatherEnum());
+                map.put("tariff",""+bigOp.getTariff());
+                map.put("user",""+bigOp.getUser().getId());
+                map.put("time",""+bigOp.getTime());
                 Jedis jedis = finalPool.getResource();
                 try {
-                    jedis.set("foo", "bar");
-                    String foobar = jedis.get("foo");
-                    System.out.println("Received from RabbitMQ "+foobar+": " + bigOp);
+                    HashMap<String, String> deviceMap= (HashMap<String, String>) map.clone();
+                    deviceMap.remove("device");
+                    jedis.hmset("device", deviceMap);
+                    HashMap<String, String> weatherMap= (HashMap<String, String>) map.clone();
+                    deviceMap.remove("weather");
+                    jedis.hmset("weather", weatherMap);
+                    HashMap<String, String> tariffMap= (HashMap<String, String>) map.clone();
+                    deviceMap.remove("tariff");
+                    jedis.hmset("tariff", tariffMap);
+                    HashMap<String, String> userMap= (HashMap<String, String>) map.clone();
+                    deviceMap.remove("user");
+                    jedis.hmset("user", userMap);
+                    HashMap<String, String> timeMap= (HashMap<String, String>) map.clone();
+                    deviceMap.remove("time");
+                    jedis.hmset("time", timeMap);
+                    System.out.println("Received from RabbitMQ: " + bigOp);
                 } finally {
                     finalPool.returnResource(jedis);
                 }
