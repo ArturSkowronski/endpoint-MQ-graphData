@@ -41,7 +41,7 @@ public class DataSimulation implements Serializable {
 
     public DataSimulation() {
         deviceEnum =randomEnum(DeviceEnum.class);
-        tariffEnum= 12.0 + random.nextDouble() * 16.0;
+        tariffEnum= 7.0 + random.nextDouble() * 8.0;
         weatherEnum=randomEnum(WeatherEnum.class);;
         user=randomEnum(User.class);;
         time=System.currentTimeMillis() / 1000L;

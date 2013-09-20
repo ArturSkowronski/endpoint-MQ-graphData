@@ -75,7 +75,7 @@ public class BigOperationWorker {
                     HashMap<String, String> timeMap= (HashMap<String, String>) map.clone();
                     deviceMap.remove("time");
                     jedis.hmset("time", timeMap);
-                    System.out.println("Received from RabbitMQ: " + bigOp);
+                    System.out.println("Worker otrzymał dane z RabbitMQ i przekazał do Redisa: " + bigOp);
                 } finally {
                     finalPool.returnResource(jedis);
                 }
