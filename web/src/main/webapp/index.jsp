@@ -36,7 +36,7 @@
                 </div>
                 Redis
                 <div class="alert alert-success">
-                    Redis to bardzo prosta baza w pamięci zainspirowana przez memcache. Do struktury klucz-> wartość nakłada dodatkowe struktury danych i operacje atomowe na nich. Pokażę jak mechanizmy transakcji i atomowość pomagają przekładać ciężar niektórych algorytmów do Redisa.
+                    Redis to baza w pamięci zainspirowana przez memcache. Do struktury klucz-> wartość nakłada dodatkowe struktury danych i operacje atomowe na nich. Pokażę jak mechanizmy transakcji i atomowość pomagają przekładać ciężar niektórych algorytmów do Redisa.
                 </div>
                 </ul>
             </div>
