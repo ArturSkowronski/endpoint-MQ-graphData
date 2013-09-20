@@ -31,12 +31,10 @@
                 Message Broker rozwijany przez VMWare. Implementacja standardu AMQP, pozwalająca na asynchroniczną obsługę połączeń webowych.
                 </div>
                 SpringMVC
-                <hr>
                 <div class="alert alert-success">
                 Framework MVC będący częścią frameworku Spring. Pozwala na użycie mapowiania requestów i dependency injection w serwisach WWW.
                 </div>
                 Redis
-                <hr>
                 <div class="alert alert-success">
                     Redis to bardzo prosta baza w pamięci zainspirowana przez memcache. Do struktury klucz-> wartość nakłada dodatkowe struktury danych i operacje atomowe na nich. Pokażę jak mechanizmy transakcji i atomowość pomagają przekładać ciężar niektórych algorytmów do Redisa.
                 </div>
