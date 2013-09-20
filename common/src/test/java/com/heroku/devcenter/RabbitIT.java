@@ -39,12 +39,6 @@ public class RabbitIT {
     }
 
     @Test
-    public void testSynchronous() throws Exception {
-        amqpTemplate.convertAndSend(rabbitQueue.getName(), new DataSimulation("foo"));
-        Assert.assertEquals(((DataSimulation) amqpTemplate.receiveAndConvert(rabbitQueue.getName())).getName(), "foo");
-    }
-
-    @Test
     public void testAsynchronous() throws Exception {
         final MessageConverter messageConverter = new SimpleMessageConverter();
         final SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
